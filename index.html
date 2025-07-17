@@ -20,6 +20,19 @@
         .full-bg {
             position: fixed;
             top: 0;
+        @media (max-width: 600px) {
+            .hero-section {
+                min-height: 180px;
+                padding-top: 18px;
+                padding-bottom: 18px;
+            }
+            .hero-section h2 {
+                font-size: 1.2rem !important;
+            }
+            .hero-section p {
+                font-size: 0.95rem !important;
+            }
+        }
             left: 0;
             width: 100vw;
             height: 100vh;
@@ -28,6 +41,14 @@
         }
         .support-box {
           max-width: 500px;
+        @media (max-width: 600px) {
+            .container {
+                max-width: 98vw;
+                padding: 10px 2px;
+                margin: 6px auto;
+                border-radius: 0;
+            }
+        }
           margin: 2rem auto;
           padding: 2rem;
           border: 1px solid #e0e0e0;
@@ -39,6 +60,16 @@
         .support-box h2 {
           font-size: 1.8rem;
           color: #1f2937;
+        @media (max-width: 600px) {
+            .services {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .service {
+                padding: 8px;
+                font-size: 0.95rem;
+            }
+        }
           margin-bottom: 1rem;
         }
         .support-box p {
@@ -50,12 +81,33 @@
           display: inline-block;
           margin-top: 1.5rem;
           padding: 0.75rem 1.5rem;
+        @media (max-width: 600px) {
+            .kb-grid {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            .kb-card {
+                font-size: 0.95rem;
+            }
+            .kb-image {
+                height: 80px;
+            }
+            .kb-content {
+                padding: 8px;
+            }
+        }
           background-color: #3b82f6;
           color: white;
           border: none;
           border-radius: 8px;
           font-size: 1rem;
           text-decoration: none;
+        @media (max-width: 600px) {
+            .footer {
+                font-size: 0.85em;
+                margin-top: 10px;
+            }
+        }
           transition: background-color 0.3s ease;
         }
         .support-box .btn:hover {
@@ -243,17 +295,39 @@
 <body>
     <div class="full-bg"></div>
     <div class="header" style="background: linear-gradient(90deg, #2563eb 60%, #ef4444 100%); color: #fff;">
-        <div style="max-width:1200px; margin:0 auto; width:100%; display:flex; align-items:center; justify-content:space-between; padding:0 48px; min-height:80px; box-sizing:border-box;">
+        <div class="header-inner" style="max-width:1200px; margin:0 auto; width:100%; display:flex; align-items:center; justify-content:space-between; padding:0 48px; min-height:80px; box-sizing:border-box;">
             <div style="display:flex; flex-direction:column; align-items:flex-start; max-width:350px;">
                 <h1 style="text-align:left; font-size:1.5rem; font-weight:700; color:#fff; margin-bottom:0.5rem; letter-spacing:0.5px; word-break:break-word;">FORNET IT Solutions</h1>
             </div>
-            <nav style="display:flex; align-items:center; gap:48px;">
+            <nav class="main-nav" style="display:flex; align-items:center; gap:48px;">
                 <a href="#services" style="color:#fff; font-weight:400; text-decoration:none; font-size:1.25rem; padding:0; border-radius:0; background:none;">Our Services</a>
                 <a href="#knowledge-base" style="color:#fff; font-weight:400; text-decoration:none; font-size:1.25rem; padding:0; border-radius:0; background:none;">Knowledge Base</a>
                 <a href="#contact" style="color:#fff; font-weight:400; text-decoration:none; font-size:1.25rem; padding:0; border-radius:0; background:none;">Contact Us</a>
             </nav>
+            <button class="mobile-menu-btn" style="display:none; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; margin-left:16px;" aria-label="Open menu">&#9776;</button>
         </div>
     </div>
+    <script>
+    // Mobile menu toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('.main-nav');
+        function checkMobile() {
+            if (window.innerWidth <= 600) {
+                menuBtn.style.display = 'block';
+                nav.style.display = 'none';
+            } else {
+                menuBtn.style.display = 'none';
+                nav.style.display = 'flex';
+            }
+        }
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        menuBtn.addEventListener('click', function() {
+            nav.style.display = nav.style.display === 'none' ? 'flex' : 'none';
+        });
+    });
+    </script>
 
     <div class="hero-section">
         <h2 style="text-align:center; color:#fff; font-size:2.2rem; margin-bottom:1rem;">Expert IT Support When You Need It</h2>
