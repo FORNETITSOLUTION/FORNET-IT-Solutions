@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="GMT+6:30">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORNET IT Solutions</title>
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(37,99,235,0.7), rgba(239,68,68,0.3)), url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=1740&q=80') center center no-repeat;
+            background-size: cover;
+            min-height: 350px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 48px;
+            padding-bottom: 48px;
+        }
+        .full-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: #e3eafc;
+        }
+        .support-box {
+          max-width: 500px;
+          margin: 2rem auto;
+          padding: 2rem;
+          border: 1px solid #e0e0e0;
+          border-radius: 12px;
+          background-color: #f9fafb;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+          font-family: "Segoe UI", sans-serif;
+        }
+        .support-box h2 {
+          font-size: 1.8rem;
+          color: #1f2937;
+          margin-bottom: 1rem;
+        }
+        .support-box p {
+          font-size: 1rem;
+          color: #4b5563;
+          line-height: 1.6;
+        }
+        .support-box .btn {
+          display: inline-block;
+          margin-top: 1.5rem;
+          padding: 0.75rem 1.5rem;
+          background-color: #3b82f6;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-size: 1rem;
+          text-decoration: none;
+          transition: background-color 0.3s ease;
+        }
+        .support-box .btn:hover {
+          background-color: #2563eb;
+        }
+        /* .section-header-box removed */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #3b82f6; /* brighter blue */
+            color: #fff;
+            padding: 8px 0 4px 0;
+            min-height: 48px;
+        /* text-align: left; */
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .container {
+            max-width: 800px;
+            margin: 32px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+        }
+        h2 {
+            color: #2563eb; /* blue heading */
+            margin-top: 0;
+        }
+        .services {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        @media (max-width: 900px) {
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+        .service {
+            flex: 1 1 250px;
+            background: #fbeaea; /* light red background */
+            border-radius: 6px;
+            padding: 18px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+        }
+        .btn-primary {
+            padding: 10px 28px;
+            font-size: 1.05rem;
+            background: linear-gradient(90deg, #2563eb 60%, #ef4444 100%);
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 16px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+            border: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #ef4444 60%, #2563eb 100%);
+            transform: translateY(-2px) scale(1.05);
+        }
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            color: #2563eb;
+            font-size: 0.95em;
+        }
+        /* Knowledge Base Section */
+        .knowledge-base {
+            background: #e3eafc;
+            padding: 32px 0;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        .section-title h2 {
+            margin: 0;
+            color: #ef4444; /* red heading */
+        }
+        .section-title p {
+            color: #2563eb;
+            font-size: 1.1em;
+        }
+        .kb-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            flex-wrap: unset;
+        }
+        @media (max-width: 900px) {
+            .kb-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .kb-card {
+            background: #fbeaea;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .kb-image {
+            height: 160px;
+            background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .kb-content {
+            padding: 18px;
+        }
+        .kb-content h3 {
+            margin: 0 0 12px 0;
+            color: #2563eb;
+            font-size: 1.2em;
+        }
+        .kb-content p {
+            color: #555;
+            margin: 0 0 16px 0;
+        }
+        .read-article-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 16px;
+        }
+        .btn-primary {
+            padding: 10px 28px;
+            font-size: 1.05rem;
+            background: linear-gradient(90deg, #2563eb 60%, #ef4444 100%);
+            color: #fff;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 16px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.08);
+            border: none;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(90deg, #ef4444 60%, #2563eb 100%);
+            transform: translateY(-2px) scale(1.05);
+        }
+        .kb-meta {
+            margin-top: 10px;
+            color: #ef4444;
+            font-size: 0.95em;
+        }
+        .kb-meta span {
+            margin-right: 16px;
+        }
+    </style>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const kbGrid = document.querySelector('.kb-grid');
+        let draggedItem = null;
+        kbGrid.querySelectorAll('.kb-card').forEach(card => {
+            card.setAttribute('draggable', 'true');
+            card.addEventListener('dragstart', function(e) {
+                draggedItem = card;
+                e.dataTransfer.effectAllowed = 'move';
+            });
+            card.addEventListener('dragover', function(e) {
+                e.preventDefault();
+            });
+            card.addEventListener('drop', function(e) {
+                e.preventDefault();
+                if (draggedItem && draggedItem !== card) {
+                    kbGrid.insertBefore(draggedItem, card.nextSibling);
+                }
+            });
+        });
+    });
+    </script>
+</head>
+<body>
+    <div class="full-bg"></div>
+    <div class="header" style="background: linear-gradient(90deg, #2563eb 60%, #ef4444 100%); color: #fff;">
+        <div style="max-width:1200px; margin:0 auto; width:100%; display:flex; align-items:center; justify-content:space-between; padding:0 48px; min-height:80px; box-sizing:border-box;">
+            <div style="display:flex; flex-direction:column; align-items:flex-start; max-width:350px;">
+                <h1 style="text-align:left; font-size:1.5rem; font-weight:700; color:#fff; margin-bottom:0.5rem; letter-spacing:0.5px; word-break:break-word;">FORNET IT Solutions</h1>
+            </div>
+            <nav style="display:flex; align-items:center; gap:48px;">
+                <a href="#services" style="color:#fff; font-weight:400; text-decoration:none; font-size:1.25rem; padding:0; border-radius:0; background:none;">Our Services</a>
+                <a href="#knowledge-base" style="color:#fff; font-weight:400; text-decoration:none; font-size:1.25rem; padding:0; border-radius:0; background:none;">Knowledge Base</a>
+                <a href="#contact" style="color:#fff; font-weight:400; text-decoration:none; font-size:1.25rem; padding:0; border-radius:0; background:none;">Contact Us</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="hero-section">
+        <h2 style="text-align:center; color:#fff; font-size:2.2rem; margin-bottom:1rem;">Expert IT Support When You Need It</h2>
+        <p style="text-align:center; color:#f9fafb; font-size:1.15rem; line-height:1.7;">
+          Get fast, reliable, and professional technical help from certified IT experts.<br>
+          Whether you're dealing with software issues, network problems, or hardware troubleshooting,<br>
+          our team is ready to support you—24/7.
+        </p>
+        <p style="text-align:center; color:#ffe4e6; font-size:1.05rem; margin-top:1.5rem;">Trusted by businesses across Myanmar for over a decade.</p>
+        <div style="text-align:center; margin-top:2rem; display:flex; flex-direction:column; align-items:center; gap:1rem;">
+          <a href="#contact" class="btn" style="background-color:#3b82f6; color:#fff; border-radius:8px; padding:0.75rem 1.5rem; font-size:1rem; text-decoration:none; transition:background-color 0.3s ease;">Contact Support</a>
+          <a href="#services" class="btn" style="background-color:#ef4444; color:#fff; border-radius:8px; padding:0.75rem 1.5rem; font-size:1rem; text-decoration:none; transition:background-color 0.3s ease;">View Our Services</a>
+        </div>
+    </div>
+    <div class="container" style="max-width:1200px; background:none; box-shadow:none; margin-left:auto; margin-right:auto;">
+        <h2 id="services" style="text-align:center;">Our Services</h2>
+        <div class="services" style="justify-content:center;">
+            <div class="service">
+                <h3>Network Setup & Security</h3>
+                <p>Design, install, and secure your office or home network.</p>
+            </div>
+            <div class="service">
+                <h3>Cloud Solutions</h3>
+                <p>Migration, management, and support for cloud platforms.</p>
+            </div>
+            <div class="service">
+                <h3>IT Support</h3>
+                <p>Remote and onsite troubleshooting for all your devices.</p>
+            </div>
+            <div class="service">
+                <h3>Consulting</h3>
+                <p>Expert advice for IT strategy, upgrades, and security.</p>
+            </div>
+        </div>
+        <!-- Knowledge Base Section -->
+        <section class="knowledge-base">
+        <div class="container" id="knowledge-base" style="max-width:1200px; background:none; box-shadow:none; margin-left:auto; margin-right:auto;">
+            <div class="section-title" style="text-align:center;">
+                <h2 style="text-align:center;">Knowledge Base</h2>
+                <p style="text-align:center;">Find solutions to common issues in our knowledge base</p>
+            </div>
+                <div class="kb-grid">
+                    <div class="kb-card">
+                        <div class="kb-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="kb-content">
+                            <h3>Printer Setup & Troubleshooting</h3>
+                            <div class="read-article-box">
+                                <a href="#" class="btn btn-primary">Read Article</a>
+                            </div>
+                        </div>
+                        <!-- kb-meta removed -->
+                    </div>
+                    <div class="kb-card">
+                        <div class="kb-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1715&q=80');"></div>
+                        <div class="kb-content">
+                            <h3>Email Configuration</h3>
+                            <div class="read-article-box">
+                                <a href="#" class="btn btn-primary">Read Article</a>
+                            </div>
+                        </div>
+                        <!-- kb-meta removed -->
+                    </div>
+                    <div class="kb-card">
+                        <div class="kb-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');"></div>
+                        <div class="kb-content">
+                            <h3>Password Reset Guide</h3>
+                            <div class="read-article-box">
+                                <a href="#" class="btn btn-primary">Read Article</a>
+                            </div>
+                        </div>
+                        <!-- kb-meta removed -->
+                    </div>
+                    <div class="kb-card">
+                        <div class="kb-image" style="background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');"></div>
+                        <div class="kb-content">
+                            <h3>Network Connectivity Issues</h3>
+                            <div class="read-article-box">
+                                <a href="#" class="btn btn-primary">Read Article</a>
+                            </div>
+                        </div>
+                        <!-- kb-meta removed -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="footer">
+            &copy; 2025 IT Solutions. All rights reserved.
+        </div>
+    </div>
+    <!-- Move Contact Us section below -->
+    <div class="container">
+        <h2 id="contact" style="text-align:left;">Contact Us</h2>
+        <div style="margin-bottom:24px;">
+            <strong>Address:</strong> No.119, 46th Street, Yangon, Myanmar<br>
+            <strong>Phone:</strong> +95 9250141575, +95 9679797973<br>
+            <strong>Email:</strong> fornetitsolution@gmail.com
+        </div>
+    </div>
+</body>
+</html>
