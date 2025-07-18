@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORNET IT Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      html {
+        zoom: 100%;
+      }
+      @media (max-width: 900px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start !important;
+          padding: 16px 10px !important;
+        }
+        header > nav {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          position: relative;
+        }
+        .nav-links {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          background: #f5f7fa;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          box-shadow: 0 2px 8px rgba(21,101,192,0.10);
+          z-index: 1001;
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          pointer-events: none;
+          transition: max-height 0.35s cubic-bezier(.77,0,.18,1), opacity 0.25s;
+        }
+        .nav-links.show {
+          max-height: 400px;
+          opacity: 1;
+          pointer-events: auto;
+        }
+        .hamburger {
+          display: flex !important;
+          margin-left: auto;
+          margin-right: 0;
+        }
+        .nav-links li {
+          margin: 0;
+          border-bottom: 1px solid #e0e5ee;
+          padding: 12px 24px;
+        }
+        .nav-links li:last-child {
+          border-bottom: none;
+        }
+      }
+      @media (max-width: 900px) {
+        .hamburger {
+          display: flex !important;
+        }
+      }
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        margin-left: 12px;
+      }
+      .hamburger span {
+        display: block;
+        width: 28px;
+        height: 4px;
+        background: #1565c0;
+        margin: 4px 0;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+    </style>
+</head>
+<body style="font-family: Calibri, Arial, sans-serif;">
+    <div style="width: 100vw; background: #f5f7fa; box-shadow: 0 10px 32px 0 rgba(21,101,192,0.18), 0 2px 8px rgba(21,101,192,0.10); border-radius: 0; margin: 0; padding: 0; position: sticky; top: 0; z-index: 1000;">
+        <header style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 24px 40px; background: inherit;">
+            <div style="display: flex; align-items: center;">
+                <img src="logo.png" alt="Logo" style="height:60px;">
+                <div style="margin-left: 16px; display: flex; flex-direction: column;">
+                    <span style="font-size: 2em; font-weight: bold; font-family: inherit;">
+                        <span style="color: red; font-weight: bold;">FOR</span><span style="color: blue; font-weight: bold;">NET</span>
+                    </span>
+                    <span style="font-size: 1em; color: #555;">IT Solutions</span>
+                </div>
+            </div>
+            <nav style="position: relative;">
+                <div class="hamburger" id="hamburger" aria-label="Open navigation" tabindex="0" style="display: none;">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="nav-overlay" id="navOverlay"></div>
+                <ul class="nav-links" id="navLinks" style="list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; font-size: 1.25em;">
+                    <li><a href="#news">News</a></li>
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#knowledge">Knowledge Base</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Breadcrumb Navigation moved above hero section -->
+        <nav aria-label="breadcrumb" style="background: #e3f5e5; padding: 12px 40px; max-width: 1400px; margin: 0 auto; font-size: 1em; border-bottom: 1px solid #e0e5ee;">
+          <ol style="display: flex; flex-wrap: wrap; list-style: none; gap: 8px; margin: 0; padding: 0; color: #1565c0;">
+            <li><a href="#" style="color: #1565c0; text-decoration: none; font-weight: bold;">Home</a></li>
+            <li style="color: #888;">/</li>
+            <li><a href="#services" style="color: #1565c0; text-decoration: none;">Our Services</a></li>
+            <li style="color: #888;">/</li>
+            <li><a href="#knowledge" style="color: #1565c0; text-decoration: none;">Knowledge Base</a></li>
+            <li style="color: #888;">/</li>
+            <li><a href="#about" style="color: #1565c0; text-decoration: none;">About Us</a></li>
+            <li style="color: #888;">/</li>
+            <li><a href="#contact" style="color: #1565c0; text-decoration: none;">Contact</a></li>
+          </ol>
+        </nav>
+    </div>
+    <section id="hero-slider" style="width: 100vw; min-height: 600px; background: linear-gradient(90deg, #e53935 0%, #1565c0 100%); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+        <div id="slides" style="max-width: 1200px; width: 100%; height: 100%; display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 48px 32px; transition: transform 0.6s cubic-bezier(.77,0,.18,1);">
+            <div class="slide" style="flex: 1; color: #fff; min-width: 0; display: none; flex-direction: row; align-items: center; justify-content: space-between;">
+                <div style="flex: 1;">
+                    <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 16px;">Empowering Your Business with IT Solutions</h1>
+                    <p style="font-size: 1.25em; margin-bottom: 32px;">FORNET delivers innovative technology and expert support to help you grow, secure, and transform your business.</p>
+                    <a href="#services" style="display: inline-block; background: #fff; color: #1565c0; font-weight: bold; padding: 12px 32px; border-radius: 6px; text-decoration: none; box-shadow: 0 2px 8px rgba(21,101,192,0.12); transition: background 0.2s, color 0.2s;">Get Started</a>
+                </div>
+                <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="logo.png" alt="FORNET IT Solutions" style="width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(21,101,192,0.18); background: #fff; padding: 16px;" />
+                </div>
+            </div>
+            <div class="slide" style="flex: 1; color: #fff; min-width: 0; display: none; flex-direction: row; align-items: center; justify-content: space-between;">
+                <div style="flex: 1;">
+                    <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 16px;">Secure & Reliable IT Infrastructure</h1>
+                    <p style="font-size: 1.25em; margin-bottom: 32px;">We build robust, scalable systems to keep your business running smoothly and securely.</p>
+                    <a href="#knowledge" style="display: inline-block; background: #fff; color: #e53935; font-weight: bold; padding: 12px 32px; border-radius: 6px; text-decoration: none; box-shadow: 0 2px 8px rgba(229,57,53,0.12); transition: background 0.2s, color 0.2s;">Learn More</a>
+                </div>
+                <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="logo.png" alt="Secure IT" style="width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(229,57,53,0.18); background: #fff; padding: 16px;" />
+                </div>
+            </div>
+            <div class="slide" style="flex: 1; color: #fff; min-width: 0; display: none; flex-direction: row; align-items: center; justify-content: space-between;">
+                <div style="flex: 1;">
+                    <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 16px;">Expert Support & Consulting</h1>
+                    <p style="font-size: 1.25em; margin-bottom: 32px;">Our team guides you through every step, from planning to implementation and beyond.</p>
+                    <a href="#contact" style="display: inline-block; background: #fff; color: #1565c0; font-weight: bold; padding: 12px 32px; border-radius: 6px; text-decoration: none; box-shadow: 0 2px 8px rgba(21,101,192,0.12); transition: background 0.2s, color 0.2s;">Contact Us</a>
+                </div>
+                <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="logo.png" alt="Expert Support" style="width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(21,101,192,0.18); background: #fff; padding: 16px;" />
+                </div>
+            </div>
+        </div>
+        <button id="prevSlide" style="position: absolute; left: 24px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.7); border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 2em; color: #1565c0; cursor: pointer; box-shadow: 0 2px 8px rgba(21,101,192,0.12);">&#8592;</button>
+        <button id="nextSlide" style="position: absolute; right: 24px; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.7); border: none; border-radius: 50%; width: 48px; height: 48px; font-size: 2em; color: #1565c0; cursor: pointer; box-shadow: 0 2px 8px rgba(21,101,192,0.12);">&#8594;</button>
+    </section>
+    </div>
+    <main style="padding-top: 112px;">
+    <!-- News Section -->
+    <section id="news" style="width: 100vw; background: #f8fafc; display: flex; flex-direction: column; align-items: center; padding: 56px 0 40px 0; position: relative; overflow: hidden; border-bottom: 1px solid #e0e5ee;">
+      <div style="max-width: 900px; width: 100%; padding: 0 32px;">
+        <h2 style="text-align: center; font-size: 2.1em; font-weight: bold; color: #1565c0; margin-bottom: 28px;">Latest News</h2>
+        <div style="display: flex; flex-direction: column; gap: 24px; align-items: center;">
+          <div style="background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(21,101,192,0.07); padding: 24px 20px; width: 100%; max-width: 700px;">
+            <h3 style="font-size: 1.15em; font-weight: bold; color: #e53935; margin-bottom: 10px;">FORNET Launches New Cybersecurity Service</h3>
+            <p style="color: #444; margin: 0;">We are excited to announce our new managed cybersecurity service, designed to protect your business from evolving threats. <a href="#" style="color: #1565c0; text-decoration: underline;">Read more</a></p>
+          </div>
+          <div style="background: #fff; border-radius: 10px; box-shadow: 0 2px 10px rgba(21,101,192,0.07); padding: 24px 20px; width: 100%; max-width: 700px;">
+            <h3 style="font-size: 1.15em; font-weight: bold; color: #1565c0; margin-bottom: 10px;">Upcoming Webinar: Cloud Migration Essentials</h3>
+            <p style="color: #444; margin: 0;">Join our free webinar on cloud migration strategies for small businesses, happening August 5th. <a href="#" style="color: #1565c0; text-decoration: underline;">Register now</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Us Section -->
+
+    <!-- About Us Section -->
+    <section id="about" style="width: 100vw; background: #fff; display: flex; flex-direction: column; align-items: center; padding: 64px 0 48px 0; position: relative; overflow: hidden;">
+      <div style="max-width: 900px; width: 100%; padding: 0 32px;">
+        <h2 style="text-align: center; font-size: 2.2em; font-weight: bold; color: #1565c0; margin-bottom: 32px;">About Us</h2>
+        <p style="font-size: 1.2em; color: #444; text-align: center; max-width: 700px; margin: 0 auto;">FORNET IT Solutions is dedicated to empowering businesses with innovative technology, expert consulting, and reliable support. Our experienced team delivers tailored IT solutions to help you grow, secure, and transform your business in a rapidly evolving digital world.</p>
+      </div>
+    </section>
+        <!-- ...existing code... -->
+        <section id="services" style="width: 100vw; background: linear-gradient(rgba(21,101,192,0.7), rgba(21,101,192,0.7)), url('networking.jpg'); background-size: cover; background-position: center; background-attachment: fixed; display: flex; flex-direction: column; align-items: center; padding: 64px 0 48px 0; position: relative; overflow: hidden;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.7); z-index: 0;"></div>
+            <div style="max-width: 1200px; width: 100%; padding: 0 32px; position: relative; z-index: 1;">
+                <h2 style="text-align: center; font-size: 2.2em; font-weight: bold; color: red; margin-bottom: 40px;">Our Services</h2>
+                <div style="position: relative; width: 100%; min-height: 320px;">
+                  <div id="services-slides" style="display: flex; flex-direction: row; justify-content: center; align-items: stretch; gap: 32px; transition: transform 0.5s;">
+                    <div class="service-card" style="flex: 1 1 340px; max-width: 340px; background: #f5f7fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(21,101,192,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+                      <div style="font-size: 2.5em; color: #e53935; margin-bottom: 16px;">&#128187;</div>
+                      <h3 style="font-size: 1.3em; font-weight: bold; margin-bottom: 12px; color: #222;">IT Consulting</h3>
+                      <p style="text-align: center; color: #555;">Expert advice and planning to align your technology with your business goals.</p>
+                    </div>
+                    <div class="service-card" style="flex: 1 1 340px; max-width: 340px; background: #f5f7fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(21,101,192,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+                      <div style="font-size: 2.5em; color: #1565c0; margin-bottom: 16px;">&#128421;&#65039;</div>
+                      <h3 style="font-size: 1.3em; font-weight: bold; margin-bottom: 12px; color: #222;">Network Solutions</h3>
+                      <p style="text-align: center; color: #555;">Design, implementation, and management of secure, scalable networks.</p>
+                    </div>
+                    <div class="service-card" style="flex: 1 1 340px; max-width: 340px; background: #f5f7fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(21,101,192,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+                      <div style="font-size: 2.5em; color: #43a047; margin-bottom: 16px;">&#128274;</div>
+                      <h3 style="font-size: 1.3em; font-weight: bold; margin-bottom: 12px; color: #222;">Cybersecurity</h3>
+                      <p style="text-align: center; color: #555;">Protect your data and systems with advanced security solutions and monitoring.</p>
+                    </div>
+                    <div class="service-card" style="flex: 1 1 340px; max-width: 340px; background: #f5f7fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(21,101,192,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+                      <div style="font-size: 2.5em; color: #009688; margin-bottom: 16px;">&#128187;</div>
+                      <h3 style="font-size: 1.3em; font-weight: bold; margin-bottom: 12px; color: #222;">Computer Hardware & Software</h3>
+                      <p style="text-align: center; color: #555;">Sales, installation, and support for computers, servers, and essential business software.</p>
+                    </div>
+                    <div class="service-card" style="flex: 1 1 340px; max-width: 340px; background: #f5f7fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(21,101,192,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+                      <div style="font-size: 2.5em; color: #ff9800; margin-bottom: 16px;">&#128190;</div>
+                      <h3 style="font-size: 1.3em; font-weight: bold; margin-bottom: 12px; color: #222;">Data Backup & Recovery</h3>
+                      <p style="text-align: center; color: #555;">Protect your business with reliable backup solutions and fast data recovery services.</p>
+                    </div>
+                    <div class="service-card" style="flex: 1 1 340px; max-width: 340px; background: #f5f7fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(21,101,192,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+                      <div style="font-size: 2.5em; color: #e53935; margin-bottom: 16px;">&#128137;</div>
+                      <h3 style="font-size: 1.3em; font-weight: bold; margin-bottom: 12px; color: #222;">Malware/Virus Protection & Removal</h3>
+                      <p style="text-align: center; color: #555;">Keep your systems safe with advanced malware and virus detection, removal, and prevention.</p>
+                    </div>
+                    <div class="service-card" style="flex: 1 1 340px; max-width: 340px; background: #f5f7fa; border-radius: 12px; box-shadow: 0 2px 12px rgba(21,101,192,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+                      <div style="font-size: 2.5em; color: #607d8b; margin-bottom: 16px;">&#128250;</div>
+                      <h3 style="font-size: 1.3em; font-weight: bold; margin-bottom: 12px; color: #222;">CCTV</h3>
+                      <p style="text-align: center; color: #555;">Advanced CCTV systems for security monitoring and peace of mind.</p>
+                    </div>
+                  </div>
+                  <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 32px; gap: 16px;">
+                    <button id="prevService" style="background: rgba(21,101,192,0.08); border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 1.5em; color: #1565c0; cursor: pointer; box-shadow: 0 2px 8px rgba(21,101,192,0.08);">&#8592;</button>
+                    <button id="nextService" style="background: rgba(21,101,192,0.08); border: none; border-radius: 50%; width: 44px; height: 44px; font-size: 1.5em; color: #1565c0; cursor: pointer; box-shadow: 0 2px 8px rgba(21,101,192,0.08);">&#8594;</button>
+                  </div>
+                </div>
+            </div>
+        </section>
+        <div style="height: 28px;"></div>
+    </main>
+    <footer>
+        
+    </footer>
+    <!-- Contact Us Section -->
+    <!-- Knowledge Base Section -->
+    <section id="knowledge" style="width: 100vw; background: linear-gradient(rgba(21,101,192,0.7), rgba(21,101,192,0.7)), url('knowledge.jpg'); background-size: cover; background-position: center; background-attachment: fixed; display: flex; flex-direction: column; align-items: center; padding: 64px 0 48px 0; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.7); z-index: 0;"></div>
+      <div style="max-width: 1000px; width: 100%; padding: 0 32px; position: relative; z-index: 1;">
+        <h2 style="text-align: center; font-size: 2.2em; font-weight: bold; color: #e53935; margin-bottom: 40px;">Knowledge Base</h2>
+        <div class="knowledge-row" style="display: flex; flex-direction: row; justify-content: center; align-items: stretch; gap: 32px;">
+          <div class="knowledge-card" style="flex: 1 1 320px; max-width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(229,57,53,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+            <div style="font-size: 2.2em; color: #e53935; margin-bottom: 16px;">&#128161;</div>
+            <h3 style="font-size: 1.2em; font-weight: bold; margin-bottom: 12px; color: #222;">How to Secure Your Network</h3>
+            <p style="text-align: center; color: #555;">Best practices and tips for keeping your business network safe from threats.</p>
+          </div>
+          <div class="knowledge-card" style="flex: 1 1 320px; max-width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(229,57,53,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+            <div style="font-size: 2.2em; color: #1565c0; margin-bottom: 16px;">&#128187;</div>
+            <h3 style="font-size: 1.2em; font-weight: bold; margin-bottom: 12px; color: #222;">Cloud Migration Essentials</h3>
+            <p style="text-align: center; color: #555;">A step-by-step guide to moving your business to the cloud efficiently.</p>
+          </div>
+          <div class="knowledge-card" style="flex: 1 1 320px; max-width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(229,57,53,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+            <div style="font-size: 2.2em; color: #43a047; margin-bottom: 16px;">&#128295;</div>
+            <h3 style="font-size: 1.2em; font-weight: bold; margin-bottom: 12px; color: #222;">IT Troubleshooting Basics</h3>
+            <p style="text-align: center; color: #555;">Quick solutions for common IT issues faced by small businesses.</p>
+          </div>
+          <div class="knowledge-card" style="flex: 1 1 320px; max-width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 2px 12px rgba(21,101,192,0.08); padding: 32px 24px; display: flex; flex-direction: column; align-items: center;">
+            <div style="font-size: 2.2em; color: #ff9800; margin-bottom: 16px;">&#128202;</div>
+            <h3 style="font-size: 1.2em; font-weight: bold; margin-bottom: 12px; color: #222;">Data Backup Strategies</h3>
+            <p style="text-align: center; color: #555;">Learn how to protect your business data with effective backup and recovery plans.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Us Section -->
+    <section id="contact" style="width: 100vw; background: #f5f7fa; display: flex; flex-direction: column; align-items: center; padding: 64px 0 48px 0; position: relative; overflow: hidden;">
+      <div style="max-width: 700px; width: 100%; padding: 0 32px;">
+        <h2 style="text-align: center; font-size: 2.2em; font-weight: bold; color: #1565c0; margin-bottom: 32px;">Contact Us</h2>
+        <div style="display: flex; flex-direction: column; gap: 24px; align-items: center;">
+          <div style="font-size: 1.15em; color: #222; display: flex; align-items: center; gap: 12px;">
+            <span style="font-weight: bold; min-width: 90px;">Address:</span>
+            <span>123 Main Street, Yangon, Myanmar</span>
+          </div>
+          <div style="font-size: 1.15em; color: #222; display: flex; align-items: center; gap: 12px;">
+            <span style="font-weight: bold; min-width: 90px;">Phone:</span>
+            <span>+95 9 123 456 789</span>
+          </div>
+          <div style="font-size: 1.15em; color: #222; display: flex; align-items: center; gap: 12px;">
+            <span style="font-weight: bold; min-width: 90px;">Email:</span>
+            <span>info@fornet.com.mm</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    </footer>
+    <script src="index.js"></script>
+    <script>
+      // Hamburger menu for mobile nav with overlay and animation
+      (() => {
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        function openNav() {
+          navLinks.classList.add('show');
+          navOverlay.classList.add('show');
+          hamburger.classList.add('active');
+        }
+        function closeNav() {
+          navLinks.classList.remove('show');
+          navOverlay.classList.remove('show');
+          hamburger.classList.remove('active');
+        }
+        function toggleNav() {
+          if (navLinks.classList.contains('show')) {
+            closeNav();
+          } else {
+            openNav();
+          }
+        }
+        hamburger.addEventListener('click', toggleNav);
+        hamburger.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') toggleNav();
+        });
+        navOverlay.addEventListener('click', closeNav);
+        // Hide nav on link click (mobile)
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            if (window.innerWidth <= 900) closeNav();
+          });
+        });
+        // Show/hide hamburger based on screen size
+        function handleResize() {
+          if (window.innerWidth <= 900) {
+            hamburger.style.display = 'flex';
+            closeNav();
+          } else {
+            hamburger.style.display = 'none';
+            closeNav();
+          }
+        }
+        window.addEventListener('resize', handleResize);
+        handleResize();
+      })();
+
+      // Hero slider logic (scoped)
+      (() => {
+        const slides = document.querySelectorAll('#slides .slide');
+        let currentSlide = 0;
+        function showSlide(idx) {
+          slides.forEach((slide, i) => {
+            slide.style.display = i === idx ? 'flex' : 'none';
+          });
+        }
+        document.getElementById('prevSlide').onclick = function() {
+          currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+          showSlide(currentSlide);
+        };
+        document.getElementById('nextSlide').onclick = function() {
+          currentSlide = (currentSlide + 1) % slides.length;
+          showSlide(currentSlide);
+        };
+        showSlide(currentSlide);
+      })();
+
+      // Services slider logic: show 3 at a time, next/prev
+      (() => {
+        const cards = Array.from(document.querySelectorAll('#services-slides .service-card'));
+        let current = 0;
+        function showServiceSlide(idx) {
+          cards.forEach((card, i) => {
+            card.style.display = (i >= idx && i < idx + 3) ? 'flex' : 'none';
+          });
+        }
+        document.getElementById('prevService').onclick = function() {
+          current = (current - 3 + cards.length) < 0 ? Math.max(cards.length - 3, 0) : (current - 3);
+          showServiceSlide(current);
+        };
+        document.getElementById('nextService').onclick = function() {
+          current = (current + 3 >= cards.length) ? 0 : (current + 3);
+          showServiceSlide(current);
+        };
+        showServiceSlide(current);
+      })();
+    </script>
+</body>
+</html>
