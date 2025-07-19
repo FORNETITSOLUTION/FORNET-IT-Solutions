@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+
+
+    <title>FORNET IT Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body style="font-family: Calibri, Arial, sans-serif;">
+    <!-- Header and Navigation Bar -->
+    <div style="background: #f5f7fa; box-shadow: 0 10px 32px 0 rgba(21,101,192,0.18), 0 2px 8px rgba(21,101,192,0.10); border-radius: 0; margin: 0; padding: 0; position: sticky; top: 0; z-index: 1000;">
+        <header style="max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 24px 40px; background: inherit;">
+            <!-- Logo and Site Title -->
+            <div style="display: flex; align-items: center;">
+                <img src="logo.png" alt="Logo" style="height:60px;">
+                <div style="margin-left: 16px; display: flex; flex-direction: column;">
+                    <span style="font-size: 2em; font-weight: bold; font-family: inherit;">
+                        <span style="color: red; font-weight: bold;">FOR</span><span style="color: blue; font-weight: bold;">NET</span>
+                    </span>
+                    <span style="font-size: 1em; color: #555;">IT Solutions</span>
+                </div>
+            </div>
+            <nav style="position: relative;">
+                <!-- Main Navigation Links -->
+                <!-- Mobile hamburger and overlay removed -->
+                <ul class="nav-links" id="navLinks" style="list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; font-size: 1.25em;">
+                    <li><a href="#services">Our Services</a></li>
+                    <li><a href="#knowledge">Knowledge Base</a></li>
+                    <li><a href="#downloads">Downloads</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- Breadcrumb Navigation moved above hero section -->
+        <nav aria-label="breadcrumb" style="background: #e3f5e5; padding: 12px 40px; max-width: 1400px; margin: 0 auto; font-size: 1em; border-bottom: 1px solid #e0e5ee;">
+        <!-- Breadcrumb Navigation -->
+          <ol style="display: flex; flex-wrap: wrap; list-style: none; gap: 8px; margin: 0; padding: 0; color: #1565c0;">
+            <li><a href="#" style="color: #1565c0; text-decoration: none; font-weight: bold;">Home</a></li>
+            <li style="color: #888;">/</li>
+            <li><a href="#services" style="color: #1565c0; text-decoration: none;">Our Services</a></li>
+            <li style="color: #888;">/</li>
+            <li><a href="#knowledge" style="color: #1565c0; text-decoration: none;">Knowledge Base</a></li>
+            <li style="color: #888;">/</li>
+            <li><a href="#downloads" style="color: #1565c0; text-decoration: none;">Downloads</a></li>
+            <li style="color: #888;">/</li>
+            <li><a href="#about" style="color: #1565c0; text-decoration: none;">About Us</a></li>
+            <li style="color: #888;">/</li>
+            <li><a href="#contact" style="color: #1565c0; text-decoration: none;">Contact</a></li>
+          </ol>
+        </nav>
+    </div>
+    <div style="width: 100%; display: flex; justify-content: center; background: linear-gradient(90deg, #e53935 0%, #1565c0 100%);">
+    <!-- Hero Slider Section -->
+    <section id="hero-slider" class="parallax-section" data-parallax-bg="linear-gradient(90deg, #e53935 0%, #1565c0 100%)" style="min-height: 600px; background: transparent; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; width: 100%; max-width: 1400px;">
+        <div id="slides" style="max-width: 1200px; width: 100%; height: 100%; display: flex; flex-direction: row; align-items: center; justify-content: space-between; padding: 48px 32px; transition: transform 0.6s cubic-bezier(.77,0,.18,1); margin: 0 auto;">
+        <!-- Slides for Hero Section -->
+            <div class="slide cssanimation ca__fx-blurInFromBottom" style="flex: 1; color: #fff; min-width: 0; display: none; flex-direction: row; align-items: center; justify-content: space-between;">
+                <div style="flex: 1;">
+                    <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 16px;">Empowering Your Business with IT Solutions</h1>
+                    <p style="font-size: 1.25em; margin-bottom: 32px;">FORNET delivers innovative technology and expert support to help you grow, secure, and transform your business.</p>
+                    <a href="#services" style="display: inline-block; background: #fff; color: #1565c0; font-weight: bold; padding: 12px 32px; border-radius: 6px; text-decoration: none; box-shadow: 0 2px 8px rgba(21,101,192,0.12); transition: background 0.2s, color 0.2s;">Get Started</a>
+                </div>
+                <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="logo.png" alt="FORNET IT Solutions" style="width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(21,101,192,0.18); background: #fff; padding: 16px;" />
+                </div>
+            </div>
+            <div class="slide cssanimation ca__fx-blurInFromBottom" style="flex: 1; color: #fff; min-width: 0; display: none; flex-direction: row; align-items: center; justify-content: space-between;">
+                <div style="flex: 1;">
+                    <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 16px;">Secure & Reliable IT Infrastructure</h1>
+                    <p style="font-size: 1.25em; margin-bottom: 32px;">We build robust, scalable systems to keep your business running smoothly and securely.</p>
+                    <a href="#knowledge" style="display: inline-block; background: #fff; color: #e53935; font-weight: bold; padding: 12px 32px; border-radius: 6px; text-decoration: none; box-shadow: 0 2px 8px rgba(229,57,53,0.12); transition: background 0.2s, color 0.2s;">Learn More</a>
+                </div>
+                <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="logo.png" alt="Secure IT" style="width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(229,57,53,0.18); background: #fff; padding: 16px;" />
+                </div>
+            </div>
+            <div class="slide cssanimation ca__fx-blurInFromBottom" style="flex: 1; color: #fff; min-width: 0; display: none; flex-direction: row; align-items: center; justify-content: space-between;">
+                <div style="flex: 1;">
+                    <h1 style="font-size: 2.5em; font-weight: bold; margin-bottom: 16px;">Expert Support & Consulting</h1>
+                    <p style="font-size: 1.25em; margin-bottom: 32px;">Our team guides you through every step, from planning to implementation and beyond.</p>
+                    <a href="#contact" style="display: inline-block; background: #fff; color: #1565c0; font-weight: bold; padding: 12px 32px; border-radius: 6px; text-decoration: none; box-shadow: 0 2px 8px rgba(21,101,192,0.12); transition: background 0.2s, color 0.2s;">Contact Us</a>
+                </div>
+                <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
+                    <img src="logo.png" alt="Expert Support" style="width: 320px; max-width: 100%; border-radius: 12px; box-shadow: 0 4px 24px rgba(21,101,192,0.18); background: #fff; padding: 16px;" />
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; left: 0; right: 0; bottom: 32px; display: flex; justify-content: center; align-items: center; gap: 24px; z-index: 2;">
+        <!-- Hero Slider Navigation Arrows -->
+          <button id="prevSlide" style="background: #1565c0; border: none; border-radius: 50%; width: 54px; height: 54px; font-size: 2em; color: #fff; cursor: pointer; box-shadow: 0 4px 16px rgba(21,101,192,0.18), 0 1.5px 4px rgba(21,101,192,0.10); display: flex; align-items: center; justify-content: center; transition: background 0.2s, box-shadow 0.2s;"><span style="display: flex; align-items: center; justify-content: center; font-size: 1.4em;">&#8592;</span></button>
+          <button id="nextSlide" style="background: #1565c0; border: none; border-radius: 50%; width: 54px; height: 54px; font-size: 2em; color: #fff; cursor: pointer; box-shadow: 0 4px 16px rgba(21,101,192,0.18), 0 1.5px 4px rgba(21,101,192,0.10); display: flex; align-items: center; justify-content: center; transition: background 0.2s, box-shadow 0.2s;"><span style="display: flex; align-items: center; justify-content: center; font-size: 1.4em;">&#8594;</span></button>
+        </div>
+        <style>
+        /* Hero Slider Arrow Hover Styles */
+        #prevSlide:hover, #nextSlide:hover {
+          background: #003c8f !important;
+          box-shadow: 0 6px 24px rgba(21,101,192,0.22), 0 2px 8px rgba(21,101,192,0.14);
+        }
+        </style>
+        </div>
+    </section>
+    </div>
+    <!-- Our Services Section -->
+    <div style="width: 100%; display: flex; justify-content: center; background: #f5f7fa;">
+    <!-- Our Services Section -->
+<section id="services" style="background: transparent; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 96px 0 48px 0; width: 100%; max-width: 1400px;">
+      <!-- Our Services Content -->
+      <div style="width: 100%; display: flex; justify-content: center; align-items: flex-start; margin-bottom: 0;">
+        <h2 style="text-align: center; font-size: 2.4em; font-weight: 900; color: #1565c0; margin-bottom: 8px; margin-top: -18px; letter-spacing: 0.5px; line-height: 1.1; width: 100%;">Our Services</h2>
+      </div>
+      <div style="display: flex; width: 100%; justify-content: center; gap: 32px; margin-top: 24px;">
+        <!-- Three Columns of Service List -->
+        <ul style="list-style: disc; font-size: 1.15em; color: #222; margin: 0; padding: 0 0 0 24px; min-width: 180px; display: flex; flex-direction: column; gap: 12px; background: none; box-shadow: none; align-items: flex-start;">
+          <li>IT Consulting</li>
+          <li>Network Solutions</li>
+          <li>Cybersecurity</li>
+          <li>Computer Hardware & Software</li>
+          <li>Cloud Services</li>
+        </ul>
+        <ul style="list-style: disc; font-size: 1.15em; color: #222; margin: 0; padding: 0 0 0 24px; min-width: 180px; display: flex; flex-direction: column; gap: 12px; background: none; box-shadow: none; align-items: flex-start;">
+          <li>Data Backup & Recovery</li>
+          <li>Malware/Virus Protection & Removal</li>
+          <li>CCTV</li>
+          <li>System Integration</li>
+          <li>Technical Support</li>
+        </ul>
+        <ul style="list-style: disc; font-size: 1.15em; color: #222; margin: 0; padding: 0 0 0 24px; min-width: 180px; display: flex; flex-direction: column; gap: 12px; background: none; box-shadow: none; align-items: flex-start;">
+          <li>IT Project Management</li>
+          <li>Software Development</li>
+          <li>Network Maintenance</li>
+          <li>Website Design</li>
+          <li>Server Management</li>
+        </ul>
+      </div>
+      <button onclick="window.location.href='services.html'" style="margin-top: 96px; align-self: center; background: #1565c0; color: #fff; font-size: 1.15em; font-weight: bold; border: none; border-radius: 8px; padding: 20px 48px; min-height: 48px; box-shadow: 0 2px 12px rgba(21,101,192,0.14); cursor: pointer; transition: background 0.2s, box-shadow 0.2s;">Read More</button>
+      <!-- End Our Services Content -->
+    </section>
+    </div>
+
+    <!-- Knowledge Base Section -->
+    <div style="width: 100%; display: flex; justify-content: center; background: #f8fafc;">
+    <!-- Knowledge Base Section -->
+      <section id="knowledge" style="background: transparent; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 72px 0 48px 0; width: 100%; max-width: 1400px;">
+      <!-- Knowledge Base Content -->
+        <div style="width: 100%; display: flex; justify-content: center; align-items: flex-start; margin-bottom: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+          <h2 style="text-align: center; font-size: 2.2em; font-weight: 900; color: #1565c0; margin-bottom: 8px; margin-top: -10px; letter-spacing: 0.5px; line-height: 1.1; width: 100%; font-family: inherit;">Knowledge Base</h2>
+        </div>
+        <div style="display: flex; width: 100%; justify-content: center; gap: 32px; margin-top: 24px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        <!-- Three Columns of Knowledge Base List -->
+          <ul style="list-style: disc; font-size: 1.12em; color: #222; margin: 0; padding: 0 0 0 24px; min-width: 180px; display: flex; flex-direction: column; gap: 10px; background: none; box-shadow: none; align-items: flex-start; font-family: inherit;">
+            <li>What is IT Consulting?</li>
+            <li>Benefits of Cloud Services</li>
+            <li>How to Secure Your Network</li>
+            <li>Data Backup Best Practices</li>
+            <li>Choosing Antivirus Solutions</li>
+          </ul>
+          <ul style="list-style: disc; font-size: 1.12em; color: #222; margin: 0; padding: 0 0 0 24px; min-width: 180px; display: flex; flex-direction: column; gap: 10px; background: none; box-shadow: none; align-items: flex-start; font-family: inherit;">
+            <li>Understanding CCTV Systems</li>
+            <li>System Integration Explained</li>
+            <li>Technical Support Tips</li>
+            <li>Project Management in IT</li>
+            <li>Website Security Essentials</li>
+          </ul>
+          <ul style="list-style: disc; font-size: 1.12em; color: #222; margin: 0; padding: 0 0 0 24px; min-width: 180px; display: flex; flex-direction: column; gap: 10px; background: none; box-shadow: none; align-items: flex-start; font-family: inherit;">
+            <li>Software Development Basics</li>
+            <li>Server Management 101</li>
+            <li>Network Maintenance Guide</li>
+            <li>Cloud Migration Steps</li>
+            <li>IT Support vs. Consulting</li>
+          </ul>
+        </div>
+        <button onclick="window.location.href='knowledge.html'" style="margin-top: 64px; align-self: center; background: #1565c0; color: #fff; font-size: 1.15em; font-weight: bold; border: none; border-radius: 8px; padding: 20px 48px; min-height: 48px; box-shadow: 0 2px 12px rgba(21,101,192,0.14); cursor: pointer; transition: background 0.2s, box-shadow 0.2s; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Read More</button>
+      <!-- End Knowledge Base Content -->
+      </section>
+    </div>
+    <!-- Downloads Section -->
+    <div style="width: 100%; display: flex; justify-content: center; background: #f5f7fa;">
+      <!-- Downloads Section -->
+      <section id="downloads" style="background: transparent; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 72px 0 48px 0; width: 100%; max-width: 1400px;">
+        <!-- Downloads Content -->
+        <div style="width: 100%; display: flex; justify-content: center; align-items: flex-start; margin-bottom: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+          <h2 style="text-align: center; font-size: 2.2em; font-weight: 900; color: #1565c0; margin-bottom: 24px; margin-top: -10px; letter-spacing: 0.5px; line-height: 1.1; width: 100%; font-family: inherit;">Downloads</h2>
+        </div>
+        <div style="width: 100%; display: flex; flex-wrap: wrap; gap: 32px; justify-content: center; margin-bottom: 32px;">
+          <!-- Softwares Box -->
+          <div class="download-box" style="background: linear-gradient(135deg, #e3f0fc 0%, #f5f7fa 100%); border: 2.5px solid #1976d2; border-radius: 18px; box-shadow: 0 4px 24px rgba(21,101,192,0.10); padding: 36px 44px 32px 44px; min-width: 260px; max-width: 340px; flex: 1 1 260px; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.25s, border-color 0.25s; position: relative; overflow: hidden;">
+            <div style="font-size: 2.2em; color: #1976d2; margin-bottom: 10px;">
+              <span style="display: inline-block; vertical-align: middle;">💻</span>
+            </div>
+            <button onclick="window.location.href='download.html#softwares'" style="margin-top: 16px; background: #1565c0; color: #fff; font-size: 1em; font-weight: bold; border: none; border-radius: 8px; padding: 12px 32px; min-height: 40px; box-shadow: 0 2px 8px rgba(21,101,192,0.14); cursor: pointer; transition: background 0.2s, box-shadow 0.2s; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Softwares</button>
+          </div>
+          <!-- Documents Box -->
+          <div class="download-box" style="background: linear-gradient(135deg, #f7fbe8 0%, #f5f7fa 100%); border: 2.5px solid #43a047; border-radius: 18px; box-shadow: 0 4px 24px rgba(67,160,71,0.10); padding: 36px 44px 32px 44px; min-width: 260px; max-width: 340px; flex: 1 1 260px; display: flex; flex-direction: column; align-items: center; transition: box-shadow 0.25s, border-color 0.25s; position: relative; overflow: hidden;">
+            <div style="font-size: 2.2em; color: #43a047; margin-bottom: 10px;">
+              <span style="display: inline-block; vertical-align: middle;">📄</span>
+            </div>
+            <button onclick="window.location.href='download.html#documents'" style="margin-top: 16px; background: #43a047; color: #fff; font-size: 1em; font-weight: bold; border: none; border-radius: 8px; padding: 12px 32px; min-height: 40px; box-shadow: 0 2px 8px rgba(67,160,71,0.14); cursor: pointer; transition: background 0.2s, box-shadow 0.2s; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Documents</button>
+          </div>
+          <style>
+            .download-box:hover {
+              box-shadow: 0 8px 32px rgba(21,101,192,0.18), 0 2px 12px rgba(21,101,192,0.12);
+              border-color: #003c8f !important;
+            }
+            .download-box:last-child:hover {
+              box-shadow: 0 8px 32px rgba(67,160,71,0.18), 0 2px 12px rgba(67,160,71,0.12);
+              border-color: #1b5e20 !important;
+            }
+          </style>
+        </div>
+        <!-- End Downloads Content -->
+      </section>
+    </div>
+    </section>
+    </div>
+    </div>
+    <main style="padding-top: 112px;">
+    <!-- News Section Removed -->
+  
+
+    <!-- About Us Section -->
+    <div style="width: 100%; display: flex; justify-content: center; background: #fff;">
+    <!-- About Us Section -->
+    <section id="about" class="parallax-section" data-parallax-bg="#fff" style="background: transparent; display: flex; flex-direction: column; align-items: center; padding: 64px 0 48px 0; position: relative; overflow: hidden; width: 100%; max-width: 1400px;">
+      <!-- About Us Content -->
+    <!-- Contact Us Section -->
+      <div style="max-width: 900px; width: 100%; padding: 0 32px;">
+        <h2 style="text-align: center; font-size: 2.2em; font-weight: bold; color: #1565c0; margin-bottom: 32px;">About Us</h2>
+        <p style="font-size: 1.2em; color: #444; text-align: center; max-width: 700px; margin: 0 auto;">FORNET IT Solutions is dedicated to empowering businesses with innovative technology, expert consulting, and reliable support. Our experienced team delivers tailored IT solutions to help you grow, secure, and transform your business in a rapidly evolving digital world.</p>
+      </div>
+    </section>
+    </div>
+    </main>
+    <footer>
+        
+    </footer>
+    <!-- Contact Us Section -->
+    <div style="width: 100%; display: flex; justify-content: center; background: #f5f7fa;">
+    <section id="contact" class="parallax-section" data-parallax-bg="#f5f7fa" style="background: transparent; display: flex; flex-direction: column; align-items: center; padding: 8px 0 4px 0; position: relative; overflow: hidden; width: 100%; max-width: 1400px;">
+      <!-- Contact Us Content -->
+      <div style="max-width: 1400px; width: 100%; margin: 0 auto; padding: 0 40px;">
+        <h2 style="text-align: left; font-size: 2.2em; font-weight: bold; color: #1565c0; margin-bottom: 32px;">Contact Us</h2>
+        <div style="display: flex; flex-direction: column; gap: 24px; align-items: flex-start; width: 100%; max-width: 700px; margin-right: auto; margin-left: 0;">
+          <div style="font-size: 1.15em; color: #222; display: flex; align-items: center; gap: 2px;">
+            <span style="font-weight: bold; min-width: 90px; text-align: left;">Address:</span>
+            <span style="text-align: left;">No.468, Bobasoe 6th Street, North Dagon Township, Yangon, Myanmar</span>
+          </div>
+          <div style="font-size: 1.15em; color: #222; display: flex; align-items: center; gap: 2px;">
+            <span style="font-weight: bold; min-width: 90px; text-align: left;">Phone:</span>
+            <span style="text-align: left;">+95 9250141575, +95 9679797973</span>
+          </div>
+          <div style="font-size: 1.15em; color: #222; display: flex; align-items: center; gap: 2px;">
+            <span style="font-weight: bold; min-width: 90px; text-align: left;">Email:</span>
+            <span style="text-align: left;">fornetitsolutions@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
